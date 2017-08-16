@@ -1,3 +1,5 @@
+package com.sanqi.compare;
+
 import java.util.*;
 
 /**

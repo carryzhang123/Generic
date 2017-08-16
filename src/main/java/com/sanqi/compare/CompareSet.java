@@ -1,4 +1,4 @@
-/**
+package com.sanqi.compare; /**
  * @author ZhangHang
  * @create 2017-08-01 20:59
  * 对TreeSet进行排序，只需要里面集合的compareTo()方法即可
