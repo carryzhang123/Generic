@@ -1,4 +1,4 @@
-package com.sanqi.Thread.executor;
+package com.sanqi.thread.executor;
 
 import java.util.concurrent.*;
 

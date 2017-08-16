@@ -1,4 +1,4 @@
-package com.sanqi.Thread.timer;
+package com.sanqi.thread.timer;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

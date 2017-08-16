@@ -1,4 +1,4 @@
-package com.sanqi.Thread.timer;
+package com.sanqi.thread.timer;
 
 import java.util.Date;
 import java.util.Timer;

@@ -1,4 +1,4 @@
-package com.sanqi.Thread.threadlocal;
+package com.sanqi.thread.threadlocal;
 
 /**
  * @author ZhangHang
