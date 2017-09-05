@@ -2,12 +2,10 @@ package com.sanqi.compare; /**
  * Created by CARRY on 2017/8/11.
  */
 /**
- * compareTo(Object o)方法是java.lang.Comparable<T>接口中的方法，当需要对某个类的对象进行排序时，
- * 该类需要实现Comparable<T>接口的，必须重写public int compareTo(T o)方法
+ * Comparator(Object o)是一个外比较器，当需要对集合里的类进行排序时，可以使用
  */
 /**
- * compare(Object o1,Object o2)方法是java.util.Comparator<T>接口的方法，
- * 它实际上是使用两对象的compareTo(object o)方法对两对象做对比
+ * Comparable(Object o1)是一个内比较器，类可以实现此接口的compareTo(....)方法，可以对类的本身做对比
  */
 public class User implements Comparable{
     private int id;

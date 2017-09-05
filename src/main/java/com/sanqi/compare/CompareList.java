@@ -2,6 +2,7 @@ package com.sanqi.compare;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * @author ZhangHang
@@ -10,16 +11,20 @@ import java.util.Collections;
  **/
 public class CompareList {
     public static void main(String[] args) {
-        ArrayList<User> list = new ArrayList<User>();
-        User user1 = new User(5, "zhanghang");
-        User user2 = new User(23, "zhanghang");
-        User user3 = new User(2, "zhanghang");
-        list.add(user1);
-        list.add(user2);
-        list.add(user3);
-        Collections.sort(list);
-        for(User user:list){
-            System.out.println(user.getId()+"--------"+user.getName());
+        ArrayList<Student> list = new ArrayList<Student>();
+        Student student1=new Student(3,21);
+        Student student2=new Student(33,22);
+        Student student3=new Student(2,23);
+        list.add(student1);
+        list.add(student2);
+        list.add(student3);
+        Collections.sort(list, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return o1.getNumber()-o2.getNumber();
+            }
+        });
+        for(Student student:list){
+            System.out.println(student.getNumber()+"  ---   "+student.getAge());
         }
-    }
-}
+}}
