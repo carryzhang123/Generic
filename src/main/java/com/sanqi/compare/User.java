@@ -1,4 +1,5 @@
-package com.sanqi.compare; /**
+package com.sanqi.compare;
+/**
  * Created by CARRY on 2017/8/11.
  */
 /**
