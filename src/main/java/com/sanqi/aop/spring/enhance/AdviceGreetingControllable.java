@@ -9,6 +9,7 @@ import org.springframework.aop.support.DelegatingIntroductionInterceptor;
  * @create 2017-07-12 17:50
  * 引介增强
  **/
+@SuppressWarnings("ALL")
 public class AdviceGreetingControllable extends DelegatingIntroductionInterceptor implements Monitorable {
     private ThreadLocal<Boolean> monitorStatusMap = new ThreadLocal<Boolean>();
 
@@ -18,6 +19,7 @@ public class AdviceGreetingControllable extends DelegatingIntroductionIntercepto
     }
 
     //拦截方法
+    @SuppressWarnings("AlibabaCommentsMustBeJavadocFormat")
     public Object invoke(MethodInvocation mi) throws Throwable {
         Object obj = null;
         //对于支持性能监视可控代理，通过判断其状态决定是否开启性能监控功能

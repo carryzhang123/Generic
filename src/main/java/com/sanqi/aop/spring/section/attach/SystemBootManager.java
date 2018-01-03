@@ -18,6 +18,7 @@ import java.util.List;
  * @create 2017-07-14 14:48
  * 设置启动管理器
  **/
+@SuppressWarnings("ALL")
 @Component
 public class SystemBootManager implements ApplicationListener<ContextRefreshedEvent>{
     private Logger logger= LoggerFactory.getLogger(this.getClass());
@@ -25,6 +26,7 @@ public class SystemBootManager implements ApplicationListener<ContextRefreshedEv
     private boolean hasRunOnce=false;
 
     //注入所有SystemBootAddon插件
+    @SuppressWarnings("AlibabaCommentsMustBeJavadocFormat")
     @Autowired(required = false)
     public void setSystemBootAddons(List<SystemBootAddon> systemBootAddons){
         Assert.notEmpty(systemBootAddons);
@@ -33,6 +35,7 @@ public class SystemBootManager implements ApplicationListener<ContextRefreshedEv
     }
 
     //触发所有插件
+    @SuppressWarnings("AlibabaCommentsMustBeJavadocFormat")
     public void onApplicationEvent(ContextRefreshedEvent event){
         if(!hasRunOnce){
             for(SystemBootAddon systemBootAddon:systemBootAddons){

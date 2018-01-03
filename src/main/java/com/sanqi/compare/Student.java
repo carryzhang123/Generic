@@ -41,17 +41,22 @@ public class Student {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj==this)
+        if(obj==this) {
             return true;
-        if(obj==null)
+        }
+        if(obj==null) {
             return false;
-        if(getClass()!=obj.getClass())
+        }
+        if(getClass()!=obj.getClass()) {
             return false;
+        }
         Student student= (Student) obj;
-        if(student.number!=this.number)
+        if(student.number!=this.number) {
             return false;
-        if(student.age!=this.age)
+        }
+        if(student.age!=this.age) {
             return false;
+        }
         return true;
     }
 }
