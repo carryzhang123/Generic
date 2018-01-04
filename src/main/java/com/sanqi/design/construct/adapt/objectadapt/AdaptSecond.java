@@ -1,4 +1,4 @@
-package com.sanqi.design.construct.Adapt.objectadapt;
+package com.sanqi.design.construct.adapt.objectadapt;
 
 /**
  * @author ZhangHang

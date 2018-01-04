@@ -1,4 +1,4 @@
-package com.sanqi.design.creator.singlepattern;
+package com.sanqi.design.creator.single;
 
 /**
  * @author ZhangHang

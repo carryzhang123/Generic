@@ -1,4 +1,4 @@
-package com.sanqi.design.creator.constructpattern;
+package com.sanqi.design.creator.build;
 
 /**
  * @author ZhangHang
