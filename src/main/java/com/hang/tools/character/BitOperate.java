@@ -1,4 +1,4 @@
-package com.hang.character;
+package com.hang.tools.character;
 
 import org.junit.Test;
 
