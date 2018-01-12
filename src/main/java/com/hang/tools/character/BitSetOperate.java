@@ -220,10 +220,4 @@ public class BitSetOperate {
         System.out.println("\nbits2 XOR bits1: ");
         System.out.println(bits2);
     }
-
-    @Test
-    public void test() {
-
-
-    }
 }
