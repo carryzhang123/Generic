@@ -1,18 +1,17 @@
+import com.hang.ramcache.anno.Cached;
+
 /**
  * @author ZhangHang
  * @create 2017-12-07 12:19
  **/
-public class   Test {
+public class Test {
     public static void main(String[] args) {
-        int a=-5;
-        System.out.println(a);
-        System.out.println(Integer.toBinaryString(a));
-        int b=5;
-        System.out.println(b);
-        System.out.println(Integer.toBinaryString(b));
-       long c=2147483648L;
-        System.out.println(c);
-        System.out.println(Long.toBinaryString(c).length());
-
+        try {
+            Class c = Class.forName("com.hang.ramcache.anno.Cached");
+            Cached cached = (Cached) c.getAnnotation(Cached.class);
+            System.out.println(cached);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

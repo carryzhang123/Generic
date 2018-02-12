@@ -110,39 +110,12 @@ public class BitOperate {
      */
     @Test
     public void fetchOrderK() {
-        int a = 32123;
+        int a = 1;
         //取出a的第四位   4-1=3
         int k = 3;
         System.out.println(Integer.toBinaryString(a));
         System.out.println((a >> k) & 1);
     }
-
-    /**
-     * 将int变量a的第k位设置为0
-     */
-    @Test
-    public void fetchOrderZero() {
-        int a = 32123;
-        //取出a的第四位   4-1=3
-        int k = 3;
-        System.out.println(Integer.toBinaryString(a));
-        int b = a & ~(1 << k);
-        System.out.println(Integer.toBinaryString(b));
-    }
-
-    /**
-     * 将int变量a的第k位设置为1
-     */
-    @Test
-    public void fetchOrderO() {
-        int a = 32123;
-        //取出a的第四位   4-1=3
-        int k = 2;
-        System.out.println(Integer.toBinaryString(a));
-        int b = a | (1 << k);
-        System.out.println(Integer.toBinaryString(b));
-    }
-
 
     /**
      * 取两个整数的平均值，防止两个整数相加的和溢出
@@ -190,5 +163,10 @@ public class BitOperate {
         int a = -1002;
         int b = a >> 31;
         System.out.println((a ^ b) - b);
+    }
+
+    @Test
+    public void test() {
+        System.out.println(Integer.toBinaryString(~(-1 << 8)));
     }
 }

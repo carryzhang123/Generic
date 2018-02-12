@@ -1,4 +1,4 @@
-package com.hang.ramcache.tools;
+package com.hang.ramcache.util;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;

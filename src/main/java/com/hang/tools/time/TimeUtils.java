@@ -1,28 +1,65 @@
 package com.hang.tools.time;
 
+import org.springframework.scheduling.support.CronSequenceGenerator;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 /**
  * @author ZhangHang
  * @create 2018-01-12 15:13
  **/
-public class DateUtils {
+public class TimeUtils {
 
-    private static final String datePattern = "yyyy-MM-dd HH:mm:ss";
+    /**
+     * 统一字符串时间格式模版
+     */
+    private static final String TIME_FORMAT_TEMPLATE = "yyyy-MM-dd HH:mm:ss";
+    private static final String datePattern = "ss mm HH dd MM yyyy";
+
+    private static final ThreadLocal<SimpleDateFormat> format = new ThreadLocal<SimpleDateFormat>() {
+        @Override
+        protected SimpleDateFormat initialValue() {
+            return new SimpleDateFormat(TIME_FORMAT_TEMPLATE);
+        }
+    };
+
+
+    /**
+     * 一秒的毫秒数
+     */
+    public static final long ONE_SECOND = 1 * 1000;
+    /**
+     * 一分钟的毫秒数
+     */
+    public static final long ONE_MINUTE = 1 * 60 * ONE_SECOND;
+    /**
+     * 一小时的毫秒数
+     */
+    public static final long ONE_HOUR = 60 * ONE_MINUTE;
+    /**
+     * 一天的毫秒数
+     */
+    public static final long ONE_DAY = 1 * 24 * ONE_HOUR;
+
+    public static long now() {
+        return System.currentTimeMillis();
+    }
 
 
     /**
      * 获得当天结束的时间戳
+     *
      * @return
      */
-    public long getTodayEndMills(){
-        Calendar today=Calendar.getInstance();
-        today.set(Calendar.HOUR_OF_DAY,23);
-        today.set(Calendar.MINUTE,59);
-        today.set(Calendar.SECOND,59);
-        today.set(Calendar.MILLISECOND,999);
+    public long getTodayEndMills() {
+        Calendar today = Calendar.getInstance();
+        today.set(Calendar.HOUR_OF_DAY, 23);
+        today.set(Calendar.MINUTE, 59);
+        today.set(Calendar.SECOND, 59);
+        today.set(Calendar.MILLISECOND, 999);
         return today.getTimeInMillis();
     }
 
@@ -46,11 +83,12 @@ public class DateUtils {
      *
      * @param date
      */
-    public void formatTim(Date date) {
+    public static String formatTim(Date date) {
         date = new Date();
-        System.out.println(date);
+//        System.out.println(date);
         String str = new SimpleDateFormat(datePattern).format(date);
-        System.out.println(str);
+//        System.out.println(str);
+        return str;
     }
 
 
@@ -118,5 +156,15 @@ public class DateUtils {
         } else {
             System.out.println("没有处于同一天！");
         }
+    }
+
+    public static Date getNextTime(String cron, Date now) {
+        CronSequenceGenerator gen = new CronSequenceGenerator(cron, TimeZone.getDefault());
+        Date time = gen.next(now);
+        return time;
+    }
+
+    public static String date2String(Date date, String pattern) {
+        return (new SimpleDateFormat(pattern)).format(date);
     }
 }
