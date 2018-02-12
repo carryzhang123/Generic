@@ -84,7 +84,7 @@ public class TimeUtils {
      * @param date
      */
     public static String formatTim(Date date) {
-        date = new Date();
+//        date = new Date();
 //        System.out.println(date);
         String str = new SimpleDateFormat(datePattern).format(date);
 //        System.out.println(str);
