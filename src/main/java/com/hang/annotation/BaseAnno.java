@@ -5,17 +5,19 @@ package com.hang.annotation;
  * @create 2018-01-25 17:44
  **/
 
+import com.hang.tools.time.TimeUtils;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Field;
 import java.util.Date;
+import java.util.Random;
 
 /**
  * 基础日志
  *
  */
-@MyTable(name="T_BaseLog")
-public class BaseLog{
+@MyTable(name="T_BaseLog",version = "1.1")
+public class BaseAnno {
 
     @MyField(name="addTime",type="Date")
     private Date log_time; // 时间
@@ -25,6 +27,16 @@ public class BaseLog{
 
     @MyField(name="message",type="String")
     private String message; // 日志内容
+
+    @MyMethod(name = "date",effect = "out put time")
+    public void dateTest(){
+        System.out.println(TimeUtils.formatTime(new Date()));
+    }
+
+    @MyMethod(name = "level", effect = "set level")
+    private void levelTest() {
+        System.out.println(Math.round(5.0));
+    }
 
     public Date getLog_time()
     {
@@ -56,25 +68,4 @@ public class BaseLog{
         this.message = message;
     }
 
-    @Test
-    public void readAnno(){
-        // 读取类的注释
-        BaseLog obj = new BaseLog();
-        MyTable table = obj.getClass().getAnnotation(MyTable.class); // 取得指定注释
-
-        System.out.println("类注释（name）: " + table.name());
-        System.out.println("类注释（version）: " + table.version());
-
-        // 读取属性的注释
-        Field[] fields = obj.getClass().getDeclaredFields();
-        for (Field f : fields)
-        {
-            // Annotation[] arr2 = f.getAnnotations(); //得到所有注释
-            MyField ff = f.getAnnotation(MyField.class);// 取得指定注释
-            if(ff != null)
-            {
-                System.out.println("属性（" + f.getName() + "）: " + ff.name() + " -- " + ff.type());
-            }
-        }
-    }
 }

@@ -59,7 +59,7 @@ public class CacheManager {
      */
     public static void printValue() {
         for (Map.Entry<String, Cache> mapping : list) {
-            System.out.println(mapping.getKey() + "---" + TimeUtils.formatTim(mapping.getValue().getTagDate()));
+            System.out.println(mapping.getKey() + "---" + TimeUtils.formatTime(mapping.getValue().getTagDate()));
         }
     }
 

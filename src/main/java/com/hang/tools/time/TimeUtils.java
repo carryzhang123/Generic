@@ -17,7 +17,7 @@ public class TimeUtils {
      * 统一字符串时间格式模版
      */
     private static final String TIME_FORMAT_TEMPLATE = "yyyy-MM-dd HH:mm:ss";
-    private static final String datePattern = "ss mm HH dd MM yyyy";
+    private static final String datePattern = "yyyy-MM-dd  HH:mm:ss   ";
 
     private static final ThreadLocal<SimpleDateFormat> format = new ThreadLocal<SimpleDateFormat>() {
         @Override
@@ -83,7 +83,7 @@ public class TimeUtils {
      *
      * @param date
      */
-    public static String formatTim(Date date) {
+    public static String formatTime(Date date) {
 //        date = new Date();
 //        System.out.println(date);
         String str = new SimpleDateFormat(datePattern).format(date);
