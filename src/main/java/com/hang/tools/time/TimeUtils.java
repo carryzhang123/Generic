@@ -17,7 +17,7 @@ public class TimeUtils {
      * 统一字符串时间格式模版
      */
     private static final String TIME_FORMAT_TEMPLATE = "yyyy-MM-dd HH:mm:ss";
-    private static final String datePattern = "yyyy-MM-dd  HH:mm:ss   ";
+    private static final String datePattern = "yyyy-MM-dd  HH:mm:ss";
 
     private static final ThreadLocal<SimpleDateFormat> format = new ThreadLocal<SimpleDateFormat>() {
         @Override
@@ -84,10 +84,7 @@ public class TimeUtils {
      * @param date
      */
     public static String formatTime(Date date) {
-//        date = new Date();
-//        System.out.println(date);
         String str = new SimpleDateFormat(datePattern).format(date);
-//        System.out.println(str);
         return str;
     }
 
@@ -156,6 +153,18 @@ public class TimeUtils {
         } else {
             System.out.println("没有处于同一天！");
         }
+    }
+
+    /**
+     * 延迟多少秒后的具体时间s
+     * @param second
+     * @return
+     */
+    public static Date delaySecond(int second) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        calendar.add(Calendar.SECOND, second);
+        return calendar.getTime();
     }
 
     public static Date getNextTime(String cron, Date now) {

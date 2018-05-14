@@ -19,7 +19,7 @@ public class TestRun {
         generateData.setLog("recycle.log");
         generateData.setServerId("50003-50004");
         //是否合并
-        generateData.setFormMerge(true);
+        generateData.setFormMerge(false);
         //选取的字段
         generateData.setExcelHead("time", "account", "level", "exp");
         //数据筛选器

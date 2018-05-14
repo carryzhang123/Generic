@@ -1,46 +1,42 @@
 package com.hang.thread.threadlocal;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 /**
  * @author ZhangHang
  * @create 2017-07-10 17:28
- * ThreadLocal在set()和get()方法中，第一步根据当前线程的对象，取出该线程Tread对象中的TreadLocalMap变量，该变量类型是TreadLocal类中的
- * ThreadLocalMap静态内部类，该静态内部类中还有一个静态内部类Entry类，且构造函数中需要传入ThreadLocal对象和Object对象，类似于key-value
- * 结构，在set方法中，会不断的创建Entry数组去保存，则get的时候，根据当前的TreadLocal对象，取出相对应的Entry数组中的值
+ * 1、ThreadLocal中有个静态内部类ThreadLocalMap，Key：ThreadLocal对象，Value：Object
+ * 2、Thread中有个对象threadLocals，为ThreadLocal中ThreadLocalMap类型
+ * 3、每个Thread对象的threadLocals对象会保存多个key-value值，对应不同的ThreadLocal对象，所以每个线程才能有独立的数据进行保存
  **/
 public class ThreadLocalRun {
-    ThreadLocal<Long> longLocal=new ThreadLocal<Long>();
-    ThreadLocal<String> strLocal=new ThreadLocal<String>();
-
-    public void set(){
-        longLocal.set(Thread.currentThread().getId());
-        strLocal.set(Thread.currentThread().getName());
-    }
-
-    public Long getLong(){
-        return longLocal.get();
-    }
-
-    public String getStr(){
-        return strLocal.get();
-    }
+    ExecutorService service = Executors.newFixedThreadPool(2);
+    ThreadLocal<Long> local = new ThreadLocal<Long>();
 
     public static void main(String[] args) throws InterruptedException {
-        final ThreadLocalRun test1=new ThreadLocalRun();
+        ThreadLocalRun run = new ThreadLocalRun();
 
-        test1.set();
-        System.out.println(test1.getLong());
-        System.out.println(test1.getStr());
+        for (int i = 0; i < 2; i++) {
+            run.service.execute(new Runnable() {
+                @Override
+                public void run() {
+                    run.local.set(Thread.currentThread().getId());
+                }
+            });
+        }
 
-        Thread thread=new Thread(){
-            @Override
-            public void run() {
-                test1.set();
-                System.out.println(test1.getLong());
-                System.out.println(test1.getStr());
-            }
-        };
+        Thread.sleep(1000);
 
-        thread.start();//启动thread
-        thread.join();//邀请thread先启动，本线程暂停
+        for (int i = 0; i < 2; i++) {
+            run.service.execute(new Runnable() {
+                @Override
+                public void run() {
+                    System.out.println(run.local.get());
+                }
+            });
+        }
+
+        run.service.shutdown();
     }
 }
