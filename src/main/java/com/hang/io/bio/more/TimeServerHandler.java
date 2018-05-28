@@ -25,8 +25,7 @@ public class TimeServerHandler implements Runnable {
         try {
             in = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
             out = new PrintWriter(this.socket.getOutputStream(), true);
-            String currentTime = null;
-            String body = null;
+            String body;
             while (true) {
                 body = in.readLine();
                 if (body == null) {
@@ -45,7 +44,6 @@ public class TimeServerHandler implements Runnable {
             }
             if (out != null) {
                 out.close();
-                out = null;
             }
             if (this.socket != null) {
                 try {

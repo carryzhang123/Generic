@@ -61,35 +61,35 @@ public class ExecutorThreadPool {
     /**
      * Excutors创建单个线程池
      */
-    private ExecutorService singleThread() {
+    public ExecutorService singleThread() {
         return Executors.newSingleThreadExecutor();
     }
 
     /**
      * Excutors创建一定数量的线程池
      */
-    private ExecutorService fixedThread() {
+    public ExecutorService fixedThread() {
         return Executors.newFixedThreadPool(6);
     }
 
     /**
      * Excutors创建无限的线程池
      */
-    private ExecutorService infiniteThread() {
+    public ExecutorService infiniteThread() {
         return Executors.newCachedThreadPool();
     }
 
     /**
      * Excutors创建schedule线程
      */
-    private ScheduledExecutorService fixedScheduleThread() {
+    public ScheduledExecutorService fixedScheduleThread() {
         return Executors.newScheduledThreadPool(6);
     }
 
     /**
      * 自定义线程池
      */
-    private ThreadPoolExecutor flexibleThread() {
+    public ThreadPoolExecutor flexibleThread() {
         int corePoolSize = 5;//核心线程数
         int maxmunPoolSize = 10;//最大线程数
         BlockingQueue<Runnable> queue = new ArrayBlockingQueue<Runnable>(20);//创建等待队列

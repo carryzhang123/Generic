@@ -1,7 +1,5 @@
 package com.hang.concurrent.locks;
 
-import org.junit.Test;
-
 /**
  * @author ZhangHang
  * @create 2018-05-03 16:23

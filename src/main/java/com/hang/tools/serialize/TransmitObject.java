@@ -1,12 +1,10 @@
-package com.hang.io.serialize;
+package com.hang.tools.serialize;
 
 import com.hang.tools.serialize.JsonUtils;
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.junit.jupiter.api.Test;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 /**
  * @author ZhangHang
@@ -66,6 +64,71 @@ public class TransmitObject {
             System.out.println(user.getUserName()+"  "+user.getPassword()+"  "+user.getAddress().getAddress());
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public class User implements Serializable {
+        private transient String userName;
+
+        @JsonIgnore
+        private String password;
+
+        private Address address;
+
+        public User() {
+        }
+
+        public User(String userName, String password, String address) {
+            this.userName = userName;
+            this.password = password;
+            this.address=new Address(address);
+        }
+
+        public User(String userName) {
+            this.userName = userName;
+        }
+
+        public String getUserName() {
+            return userName;
+        }
+
+        public void setUserName(String userName) {
+            this.userName = userName;
+        }
+
+        public String getPassword() {
+            return password;
+        }
+
+        public void setPassword(String password) {
+            this.password = password;
+        }
+
+        public Address getAddress() {
+            return address;
+        }
+
+        public void setAddress(Address address) {
+            this.address = address;
+        }
+    }
+
+    public class Address implements Serializable{
+        private String address;
+
+        public Address() {
+        }
+
+        public Address(String address) {
+            this.address = address;
+        }
+
+        public String getAddress() {
+            return address;
+        }
+
+        public void setAddress(String address) {
+            this.address = address;
         }
     }
 }
