@@ -8,12 +8,13 @@ import com.hang.tools.threadpool.ExecutorUtils;
  **/
 public class Test {
     public static void main(String[] args) {
+
         ExecutorUtils.addTask(new Runnable() {
             @Override
             public void run() {
                 EchoServer server=new EchoServer();
                 try {
-                    server.bind(8000);
+                    server.bind(5002);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -23,7 +24,7 @@ public class Test {
         ExecutorUtils.addTask(new Runnable() {
             @Override
             public void run() {
-                EchoClient echoClient=new EchoClient("127.0.0.1",8080);
+                EchoClient echoClient=new EchoClient("127.0.0.1",5002);
                 try {
                     echoClient.run();
                 } catch (Exception e) {

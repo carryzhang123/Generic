@@ -5,15 +5,15 @@ package com.hang.design.action.observer;
  * @create 2018-01-04 17:41
  **/
 public class ConcreteSubject extends Subject {
-    private String subject;
+    private int number;
 
-    public String getSubject() {
-        return subject;
+    public int getNumber() {
+        return number;
     }
 
-    public void change(String parameter){
-        this.subject=parameter;
-        System.out.println("主题的状态已经改变为："+subject);
-        this.updateStatus(subject);
+    public void change(int number) {
+        this.number = number;
+        //通知观察者
+        this.updateStatus(number);
     }
 }

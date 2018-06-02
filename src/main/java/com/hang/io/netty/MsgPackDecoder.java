@@ -19,11 +19,12 @@ public class MsgPackDecoder extends MessageToMessageDecoder<ByteBuf> {
      */
     @Override
     protected void decode(ChannelHandlerContext context, ByteBuf byteBuf, List<Object> list) throws Exception {
-        //创建新的字节数组
+        //将ByteBuf中的数据存入新的字节组中
         int length=byteBuf.readableBytes();
         byte[] array = new byte[length];
-        //将ByteBuf的数据解码，放入message消息里
         byteBuf.getBytes(byteBuf.readerIndex(), array, 0, byteBuf.readableBytes());
+
+        //将字节组数据放入message消息中
         MessagePack msgpack = new MessagePack();
         list.add(msgpack.read(array));
     }

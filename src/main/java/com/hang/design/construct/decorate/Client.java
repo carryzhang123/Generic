@@ -9,10 +9,10 @@ package com.hang.design.construct.decorate;
  **/
 public class Client {
     public static void main(String[] args) {
-        Component component=new ConcreteComponent();
-        FishDecorate fishDecorate=new FishDecorate(component);
+        Component component=new ComponentImpl();
+        DecorateFish fishDecorate=new DecorateFish(component);
         fishDecorate.sampleOperation();
-        HorseDecorate horseDecorate=new HorseDecorate(component);
+        DecorateHorse horseDecorate=new DecorateHorse(component);
         horseDecorate.sampleOperation();
     }
 }

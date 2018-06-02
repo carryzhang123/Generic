@@ -5,6 +5,8 @@ import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.codec.FixedLengthFrameDecoder;
+import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 
 /**
  * @author ZhangHang
@@ -26,7 +28,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
  * 9、Decoder这个类的实现类主要讲ByteBuf对象中的字节转成消息对象，其中ReplayingDecoder这个实现类只要ByteBuf中有数据就会自动去读取，不需提前做判断
  */
 public class EchoServer {
-    public  void bind(int port) throws Exception {
+    public void bind(int port) throws Exception {
         //服务端接受客户端的连接
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         //用于SocketChannel的网络读写
@@ -40,7 +42,7 @@ public class EchoServer {
             bootstrap.channel(NioServerSocketChannel.class);
             //group可以处理的最大连接数
             bootstrap.option(ChannelOption.SO_BACKLOG, 100);
-            // 有数据立即发送
+            // 有数据立即发送，即禁止Nagle算法
             bootstrap.option(ChannelOption.TCP_NODELAY, true);
             // 保持连接
             bootstrap.childOption(ChannelOption.SO_KEEPALIVE, true);
@@ -49,9 +51,9 @@ public class EchoServer {
                 @Override
                 protected void initChannel(SocketChannel channel) throws Exception {
                     //获取channel中的pipe管道，并对管道中的数据进行处理
-                    ChannelPipeline pipeline=channel.pipeline();
-                    //将管道中的数据加入handler类中进行处理
-                    pipeline.addLast(new MsgPackDecoder(),new MsgpackEncoder(),new EchoServerHandler());
+                    ChannelPipeline pipeline = channel.pipeline();
+                    //将管道中的数据加入handler类中进行处理，FixedLengthFrameDecoder第一个处理ByteBuf中的数据，定长55，超出截取，不够则等待
+                    pipeline.addLast(new FixedLengthFrameDecoder(44), new MsgPackDecoder(), new MsgpackEncoder(), new EchoServerHandler());
                 }
             });
 
@@ -65,24 +67,6 @@ public class EchoServer {
 
             //等待服务端监听端口关闭
             f.channel().closeFuture().sync();
-
-//            bootstrap.group(bossGroup, workerGroup)
-//                    .channel(NioServerSocketChannel.class)
-//                    .option(ChannelOption.SO_BACKLOG, 100)
-//                    .childHandler(new ChannelInitializer<SocketChannel>() {
-//                        @Override
-//                        protected void initChannel(SocketChannel sc) throws Exception {
-//                            sc.pipeline().addLast("frameDecoder", new LengthFieldBasedFrameDecoder(65535, 0, 2, 0, 2));
-//                            sc.pipeline().addLast("msgpack decoder", new MsgPackDecoder());
-//                            sc.pipeline().addLast("frameEncoder", new LengthFieldPrepender(2));
-//                            sc.pipeline().addLast("msgpack encoder", new MsgpackEncoder());
-//                            sc.pipeline().addLast(new EchoServerHandler());
-//                        }
-//                    });
-//            //，类似于JDK的Future，主要用于异步操作的通知回调
-//            ChannelFuture f = bootstrap.bind(port).sync();
-//            //等待服务端监听端口关闭
-//            f.channel().closeFuture().sync();
         } finally {
             //优雅退出，释放线程池资源
             bossGroup.shutdownGracefully();

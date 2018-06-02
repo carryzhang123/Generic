@@ -2,10 +2,14 @@ package com.hang.design.construct.facade;
 
 /**
  * @author ZhangHang
- * @create 2018-01-04 18:27
- * 系统有多个子功能，则设计一个外观类，将多个子功能集成到里面，客户端直接调用外观类即可；
+ * @create 2018-05-29 1:24
  **/
-public class Client {
+
+/**
+ *  1、系统有多个子功能
+ *  2、创建一个外观类，把多个子功能统一起来
+ */
+public class Test {
     public static void main(String[] args) {
         Facade facade=new Facade();
         facade.say();

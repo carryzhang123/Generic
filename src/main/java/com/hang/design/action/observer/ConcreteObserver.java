@@ -5,20 +5,26 @@ package com.hang.design.action.observer;
  * @create 2018-01-04 17:36
  **/
 public class ConcreteObserver extends Observer {
-    private String state;
+    private int flag;
+    private int number;
 
-    @Override
-    public void set(String state) {
-        this.state = state;
+    public ConcreteObserver(int flag) {
+        this.flag = flag;
     }
 
     @Override
-    void update(String parameter) {
-        this.state = parameter;
-        System.out.println("当前观察者的参数已更新：" + state);
+    public void set(int state) {
+        this.number = state;
     }
 
+    @Override
+    void update(int number) {
+        this.number = number;
+        say();
+    }
+
+    @Override
     public void say() {
-        System.out.println("当前观察者的参数是：" + state);
+        System.out.println("ClassName：" + this.getClass().getSimpleName() + flag + " 当前已修改主题参数：" + number);
     }
 }

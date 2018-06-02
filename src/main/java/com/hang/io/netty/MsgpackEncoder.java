@@ -19,8 +19,10 @@ public class MsgpackEncoder extends MessageToByteEncoder<Object> {
     protected void encode(ChannelHandlerContext context, Object tmpBytes, ByteBuf byteBuf) throws Exception {
         //将message消息写入新的数组中
         MessagePack msgpack = new MessagePack();
-        byte[] raw = msgpack.write(tmpBytes);
+        byte[] newBytes = msgpack.write(tmpBytes);
+        System.out.println("encode length:"+newBytes.length);
+
         //刷新到bytebuf里进行传输
-        byteBuf.writeBytes(raw);
+        byteBuf.writeBytes(newBytes);
     }
 }

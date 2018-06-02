@@ -1,6 +1,5 @@
 package com.hang.io.netty;
 
-import com.hang.io.netty.coding.serialize.UserInfo;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 
@@ -13,11 +12,13 @@ public class EchoClientHandler extends ChannelHandlerAdapter {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        String message="this is a test!";
+        String message="userName=zhanghang    password=123456   !";
+
+        ctx.writeAndFlush(message);
+
         System.out.println("client send:"+message);
 
-        ctx.write(message);
-        ctx.flush();
+        ctx.writeAndFlush(message);
     }
 
 
@@ -26,6 +27,7 @@ public class EchoClientHandler extends ChannelHandlerAdapter {
         System.out.println("client receive: " + msg);
 
         ctx.write(msg);
+
         System.out.println("client send:"+msg);
     }
 

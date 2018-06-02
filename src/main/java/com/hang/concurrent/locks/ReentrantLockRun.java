@@ -15,11 +15,11 @@ import java.util.concurrent.locks.ReentrantLock;
  * ->将自己找到最近没放弃线程的后面，即前个线程为SIGN状态->等待unpark()被唤醒->调整队列，获取资源（如果被中断过，则在下次启动后才会知道）
  * 3、释放锁->tryRelease()->状态设置0->unparkSuccessor()唤醒下一个等待者
  */
-public class ReentrantLockRun {
+class ReentrantLockRun {
     private Lock lock = new ReentrantLock();
     private int i = 0;
 
-    public void increase() {
+    private void increase() {
         lock.lock();
         try {
             int tmp = i + 1;

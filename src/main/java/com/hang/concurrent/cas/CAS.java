@@ -5,8 +5,6 @@ package com.hang.concurrent.cas;
  * @create 2018-05-02 16:25
  **/
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 /**
  * CAS采用的是乐观锁，即假设当前状态不冲突情况下去执行，如果冲突，则一直尝试，直至不冲突为止
  * CAS传入三个值，旧值 现在值 更改值，只有旧值和现在值相等时，才会将更改值赋值于现在值

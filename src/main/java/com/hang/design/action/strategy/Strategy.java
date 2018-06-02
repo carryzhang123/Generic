@@ -6,4 +6,6 @@ package com.hang.design.action.strategy;
  **/
 public interface Strategy {
     float calculate(float price);
+
+    int getFlag();
 }

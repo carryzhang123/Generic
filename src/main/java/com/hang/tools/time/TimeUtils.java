@@ -156,6 +156,13 @@ public class TimeUtils {
     }
 
     /**
+     * 得到当前时间错
+     */
+    public static long getNow(){
+        return System.currentTimeMillis();
+    }
+
+    /**
      * 延迟多少秒后的具体时间s
      * @param second
      * @return

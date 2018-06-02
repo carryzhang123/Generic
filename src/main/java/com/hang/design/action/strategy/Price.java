@@ -5,7 +5,13 @@ package com.hang.design.action.strategy;
  * @create 2018-01-04 18:41
  **/
 public class Price {
-    public void calculate(Strategy strategy, float price) {
-        System.out.println(strategy.calculate(price));
+    private float price;
+
+    public Price(float price) {
+        this.price = price;
+    }
+
+    public void calculate(Strategy strategy) {
+        System.out.println("策略_" + strategy.getFlag() + ":  " + strategy.calculate(price));
     }
 }
