@@ -13,19 +13,19 @@ import java.lang.reflect.Method;
  **/
 public class ReceiveTest {
     public static void main(String[] args) throws InvocationTargetException, IllegalAccessException {
-        TianEvent event=TianEvent.valueOf(RunnableKey.FIRST.threadId(), new Runnable() {
+        TianEvent event = TianEvent.valueOf(RunnableKey.FIRST.threadId(), new Runnable() {
             @Override
             public void run() {
-                System.out.println("This is a about annotation and event receive test!"+Thread.currentThread().getId());
+                System.out.println("This is a about annotation and event receive test!" + Thread.currentThread().getId());
             }
         });
 
-        Method[] methods=ReceiveMethod.class.getDeclaredMethods();
-        for(Method method:methods){
+        Method[] methods = ReceiveMethod.class.getDeclaredMethods();
+        for (Method method : methods) {
             method.setAccessible(true);
-           if(method.isAnnotationPresent(ReceiveEvent.class)){
-               method.invoke(new ReceiveMethod(),event);
-           }
+            if (method.isAnnotationPresent(ReceiveEvent.class)) {
+                method.invoke(new ReceiveMethod(), event);
+            }
         }
     }
 }

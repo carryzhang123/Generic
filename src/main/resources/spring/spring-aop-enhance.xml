@@ -10,15 +10,15 @@
     potimize：当设置为true时，强制使用CGLib动态代理，对singleton的代理，推荐使用CGLib，因为创建慢，性能高
     proxyTargetClass：是否对类进行代理（而不是对接口进行代理）。当设置为true时，使用CGLib动态代理
     -->
-    <bean id="greetingBefore" class="com.hang.aop.spring.enhance.AdviceGreetingBefore"/>
-    <bean id="greetingAfter" class="com.hang.aop.spring.enhance.AdviceGreetingAfter"/>
-    <bean id="greetingSurround" class="com.hang.aop.spring.enhance.AdviceGreetingSurround"/>
-    <bean id="greetingTransaction" class="com.hang.aop.spring.enhance.AdviceGreetingTransaction"/>
-    <bean id="greetingControllable" class="com.hang.aop.spring.enhance.AdviceGreetingControllable"/>
-    <bean id="target" class="com.hang.aop.spring.enhance.NaiveWaiter"/>
-    <bean id="targetTwo" class="com.hang.aop.spring.enhance.NaiveWaiterTwo"/>
+    <bean id="greetingBefore" class="com.hang.spring.aop.spring.enhance.AdviceGreetingBefore"/>
+    <bean id="greetingAfter" class="com.hang.spring.aop.spring.enhance.AdviceGreetingAfter"/>
+    <bean id="greetingSurround" class="com.hang.spring.aop.spring.enhance.AdviceGreetingSurround"/>
+    <bean id="greetingTransaction" class="com.hang.spring.aop.spring.enhance.AdviceGreetingTransaction"/>
+    <bean id="greetingControllable" class="com.hang.spring.aop.spring.enhance.AdviceGreetingControllable"/>
+    <bean id="target" class="com.hang.spring.aop.spring.enhance.NaiveWaiter"/>
+    <bean id="targetTwo" class="com.hang.spring.aop.spring.enhance.NaiveWaiterTwo"/>
     <bean id="waiter" class="org.springframework.aop.framework.ProxyFactoryBean"
-          p:interfaces="com.hang.aop.spring.enhance.Monitorable"
+          p:interfaces="com.hang.spring.aop.spring.enhance.Monitorable"
           p:interceptorNames="greetingControllable"
           p:target-ref="target"
           p:proxyTargetClass="true"
