@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="waiterTarget" class="com.hang.spring.aop.spring.section.Waiter"/>
+    <bean id="sellerTarget" class="com.hang.spring.aop.spring.section.Seller"/>
+
+    <!--增强-->
+    <bean id="greetingAdvice" class="com.hang.spring.aop.spring.section.AdviceGreetingBefore"/>
+
+    <!--静态普通方法名匹配切面-->
+    <bean id="greetingAdvisor" class="com.hang.spring.aop.spring.section.PointcutGreetingStatic" p:advice-ref="greetingAdvice"/>
+
+     <!--静态正则表达式方法匹配切面-->
+    <bean id="regexpAdvisor"
+          class="org.springframework.aop.support.RegexpMethodPointcutAdvisor"
+          p:advice-ref="greetingAdvice">
+        <property name="patterns">
+            <list>
+                <value>.*greet.*</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--动态切面-->
+    <bean id="dynamicAdvisor"
+          class="org.springframework.aop.support.DefaultPointcutAdvisor"
+          p:advice-ref="greetingAdvice">
+        <property name="pointcut">
+            <bean class="com.hang.spring.aop.spring.section.PointcutGreetingDynamic"/>
+        </property>
+    </bean>
+
+    <!--流程切面-->
+    <bean id="controlFlowPointcut"
+          class="org.springframework.aop.support.ControlFlowPointcut">
+        <constructor-arg type="java.lang.Class"
+                         value="com.hang.spring.aop.spring.section.WaiterFlow"/>
+        <constructor-arg type="java.lang.String"
+                         value="service"/>
+    </bean>
+    <bean id="controlFlowAdvisor"
+          class="org.springframework.aop.support.DefaultPointcutAdvisor"
+          p:pointcut-ref="controlFlowPointcut"
+          p:advice-ref="greetingAdvice"/>
+
+    <!--复合切点-->
+    <bean id="gcp" class="com.hang.spring.aop.spring.section.PointcutGreetingComposable"/>
+    <bean id="composableAdvisor"
+          class="org.springframework.aop.support.DefaultPointcutAdvisor"
+          p:pointcut="#{gcp.intersectionPointcut}"
+          p:advice-ref="greetingAdvice"/>
+
+
+    <!--引介切面-->
+    <bean id="introduceAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+        <constructor-arg>
+            <bean class="com.hang.spring.aop.spring.section.AdviceGreetingControllable"/>
+        </constructor-arg>
+    </bean>
+
+    <!--代理模版-->
+    <bean id="parent" abstract="true"
+          class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:interfaces="com.hang.spring.aop.spring.enhance.Monitorable"
+          p:interceptorNames="introduceAdvisor"
+          p:proxyTargetClass="true"/>
+
+    <!--目标业务类-->
+    <bean id="waiter" parent="parent" p:target-ref="waiterTarget"/>
+    <bean id="seller" parent="parent" p:target-ref="sellerTarget"/>
+
+    <!--自动创建代理-->
+    <!--
+    BeanNameAutoProxyCreator基于Bean配置名规则的自动代理器
+    beanNames添加bean的名称
+    optimize表示强制使用CGLib动态代理技术
+    -->
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator"
+          p:beanNames="waiterTarget,sellerTarget"
+          p:interceptorNames="greetingAdvice"
+          p:optimize="true"/>
+
+    <!--
+    DefaultAdvisorAutoProxyCreator基于Advisor匹配机制的自动代理器
+    会将所有的Advisor自动匹配到Bean中
+    -->
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
+
+</beans>
