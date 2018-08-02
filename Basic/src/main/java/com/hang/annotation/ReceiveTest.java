@@ -19,6 +19,7 @@ public class ReceiveTest {
             }
         });
 
+        //getDeclaredMethods()获取所有方法，而getMethods()只能获取公有方法
         Method[] methods = ReceiveMethod.class.getDeclaredMethods();
         for (Method method : methods) {
             method.setAccessible(true);

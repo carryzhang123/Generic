@@ -4,8 +4,11 @@ import com.hang.spring.sanqilaod.event.PetEvent;
 import com.hang.spring.sanqilaod.model.PetInfo;
 import com.hang.spring.sanqilaod.reflect.SpringContext;
 import com.hang.spring.sanqilaod.resource.PetResource;
+import com.hang.tools.threadpool.ExecutorUtils;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * @author ZhangHang
@@ -16,14 +19,26 @@ public class Test {
         //启动Spring容器
         ApplicationContext context = new ClassPathXmlApplicationContext("/spring/applicationcontext.xml");
 
-        for (PetResource petResource : SpringContext.getPetManager().getAll()) {
-            String level = petResource.getLevel();
-            String exp = petResource.getExp();
+        ExecutorUtils.addTask(new Runnable() {
+            @Override
+            public void run() {
+                for (PetResource petResource : SpringContext.getPetManager().getAll()) {
+                    String level = petResource.getLevel();
+                    String exp = petResource.getExp();
 
-            PetEvent petEvent = PetEvent.valueOf(PetInfo.valueOf(level, exp));
+                    PetEvent petEvent = PetEvent.valueOf(PetInfo.valueOf(level, exp));
 
-            SpringContext.getInstance().detachEvent(petEvent);
-            break;
-        }
+                    try {
+                        SpringContext.getInstance().detachEvent(petEvent);
+                    } catch (InvocationTargetException e) {
+                        e.printStackTrace();
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                }
+            }
+        },3000);
+
     }
 }
