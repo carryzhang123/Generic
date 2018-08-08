@@ -3,9 +3,18 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd"
       >
+    <!-- 自动扫描-->
+    <context:component-scan base-package="com.javen"/>
 
     <!-- 使用annotation(注解) -->
-    <context:annotation-config></context:annotation-config>
-    <!-- 自动扫描-->
-    <context:component-scan base-package="com.com.hang"></context:component-scan>
+    <context:annotation-config/>
+
+    <!--配置properties文件，可以使用里面变量替换-->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:jdbc.properties</value>
+                <value>classpath:log4j.properties</value></list>
+        </property>
+    </bean>
 </beans>

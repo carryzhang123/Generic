@@ -20,7 +20,7 @@ public class LRUMap<K, V> extends LinkedHashMap<K, V> {
      * 判断是否超出限制，超出则移除链表头，即最久没有访问的数据
      * @param eldest
      * @return
-     */ v
+     */
     @Override
     protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
         return size() > DEFAULT_MAX_CAPACITY;
