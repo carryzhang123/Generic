@@ -14,7 +14,8 @@
         <property name="locations">
             <list>
                 <value>classpath:jdbc.properties</value>
-                <value>classpath:log4j.properties</value></list>
+                <value>classpath:log4j.properties</value>
+            </list>
         </property>
     </bean>
 </beans>
