@@ -1,11 +1,6 @@
 package com.javen.model;
 
-/**
- * @author ZhangHang
- * @create 2018-08-02 22:16
- **/
 public class User {
-
     private Integer id;
 
     private String userName;
@@ -46,10 +41,11 @@ public class User {
         this.age = age;
     }
 
-    @Override
-    public String toString() {
-        return "User [id=" + id + ", userName=" + userName + ", password="
-                + password + ", age=" + age + "]";
-    }
-
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", userName=" + userName + ", password="
+				+ password + ", age=" + age + "]";
+	}
+    
+    
 }

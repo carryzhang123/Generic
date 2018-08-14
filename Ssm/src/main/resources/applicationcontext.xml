@@ -3,10 +3,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd"
       >
-    <!-- 自动扫描-->
+
+    <!--导入其他配置文件-->
+    <import resource="spring-mybatis.xml"/>
+    <!--<import resource="spring-mvc.xml"/>-->
+
+    <!-- 自动扫描，并将扫描的对象放入Spring容器中，Springmvc子容器可以访问-->
     <context:component-scan base-package="com.javen"/>
 
-    <!-- 使用annotation(注解) -->
+    <!-- 使用annotation(注解)， -->
     <context:annotation-config/>
 
     <!--配置properties文件，可以使用里面变量替换-->
@@ -18,4 +23,5 @@
             </list>
         </property>
     </bean>
+
 </beans>
