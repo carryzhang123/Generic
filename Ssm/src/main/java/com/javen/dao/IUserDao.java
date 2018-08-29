@@ -2,17 +2,19 @@ package com.javen.dao;
 
 import com.javen.model.User;
 
+import java.util.List;
+
 
 public interface IUserDao {
-    int deleteByPrimaryKey(Integer id);
+    int deleteByUserId(Integer id);
 
-    int insert(User record);
+    int insert(User user);
 
-    int insertSelective(User record);
+    int insertSelective(User user);
 
-    User selectByPrimaryKey(Integer id);
+    User getByUser(User user);
 
-    int updateByPrimaryKeySelective(User record);
+    void updateByUserId(User user);
 
-    int updateByPrimaryKey(User record);
+    void insertUserBatch(List<User> list);
 }
