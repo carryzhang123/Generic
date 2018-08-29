@@ -45,6 +45,17 @@
         <jackson-version1>2.9.6</jackson-version1>
         <!-- jackson mapper asl-->
         <jackson-version2>1.9.13</jackson-version2>
+        <druid.version>1.0.29</druid.version>
+        <spring.redis.version>1.7.2.RELEASE</spring.redis.version>
+        <mapper.version>3.4.5</mapper.version>
+        <pagehelper.version>4.1.6</pagehelper.version>
+        <amqp-client.version>3.6.5</amqp-client.version>
+        <cglib-full.version>2.0.2</cglib-full.version>
+        <dubbo.version>2.5.8</dubbo.version>
+        <freemarker.version>2.3.23</freemarker.version>
+        <spring.rabbit.version>1.6.6.RELEASE</spring.rabbit.version>
+        <zookeeper.version>3.3.1</zookeeper.version>
+        <zkclient.version>0.4</zkclient.version>
     </properties>
 
     <!--子工程必选继承-->
@@ -159,6 +170,53 @@
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis-spring</artifactId>
                 <version>1.2.2</version>
+            </dependency>
+
+            <!-- mybatis插件 -->
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper</artifactId>
+                <version>${mapper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>5.1.2</version>
+            </dependency>
+            <dependency>
+                <groupId>com.rabbitmq</groupId>
+                <artifactId>amqp-client</artifactId>
+                <version>${amqp-client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib-full</artifactId>
+                <version>${cglib-full.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${freemarker.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.amqp</groupId>
+                <artifactId>spring-rabbit</artifactId>
+                <version>${spring.rabbit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>${zookeeper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.101tec</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>${zkclient.version}</version>
             </dependency>
 
             <!--netty依赖-->
@@ -338,6 +396,18 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-test</artifactId>
                 <version>${spring-version}</version>
+            </dependency>
+
+            <!-- spring - redis -->
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-redis</artifactId>
+                <version>1.6.0.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>2.7.3</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

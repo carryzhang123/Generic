@@ -70,14 +70,17 @@
 
   <insert id ="insertUserBatch" parameterType="java.util.List" >
         insert into user_t
-        (id,user_name, password, age)
+        (id,user_name, password, address, career, telephone, age)
         values
          <foreach collection ="list" item="item"  separator =",">
              (
-             #{item.id,jdbcType=INTEGER}
+             #{item.id,jdbcType=INTEGER},
              #{item.userName,jdbcType=VARCHAR},
-            #{item.password,jdbcType=VARCHAR},
-             #{item.age,jdbcType=INTEGER},
+             #{item.password,jdbcType=VARCHAR},
+             #{item.address,jdbcType=VARCHAR},
+             #{item.career,jdbcType=VARCHAR},
+             #{item.telephone,jdbcType=VARCHAR},
+             #{item.age,jdbcType=INTEGER}
              )
          </foreach >
   </insert >

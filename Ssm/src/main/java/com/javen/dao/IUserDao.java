@@ -4,7 +4,6 @@ import com.javen.model.User;
 
 import java.util.List;
 
-
 public interface IUserDao {
     int deleteByUserId(Integer id);
 

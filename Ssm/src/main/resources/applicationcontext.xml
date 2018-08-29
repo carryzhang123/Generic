@@ -22,6 +22,9 @@
                 <!--<value>classpath:jdbc.properties</value>-->
                 <!--<value>classpath:log4j.properties</value>-->
                 <value>classpath:spring-config.properties</value>
+                <value>classpath:jdbc.properties</value>
+                <value>classpath:log4j.properties</value>
+                <value>classpath:redis.properties</value>
             </list>
         </property>
     </bean>
