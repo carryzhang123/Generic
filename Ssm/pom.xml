@@ -142,6 +142,11 @@
             <artifactId>logback-ext-spring</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
         <!-- spring-rabbitmq-->
         <dependency>
             <groupId>org.springframework.amqp</groupId>

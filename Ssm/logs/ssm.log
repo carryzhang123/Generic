@@ -2083,3 +2083,540 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 [INFO] [2018-08-25 12:16:12][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@57fffcd7: startup date [Sat Aug 25 12:16:10 CST 2018]; root of context hierarchy
 [INFO] [2018-08-25 12:16:12][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/resources] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
 [INFO] [2018-08-25 12:16:13][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@57fffcd7: startup date [Sat Aug 25 12:16:10 CST 2018]; root of context hierarchy
+[INFO] [2018-08-30 11:16:54][org.springframework.test.context.web.WebTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+  [INFO] [2018-08-30 11:16:54][org.springframework.test.context.web.WebTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@59f99ea, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@27efef64, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6f7fd0e6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@47c62251, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3e6fa38a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@66a3ffec]
+  [INFO] [2018-08-30 11:16:55][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/applicationcontext.xml]
+  [INFO] [2018-08-30 11:16:55][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-mybatis.xml]
+  [INFO] [2018-08-30 11:16:55][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/logback.xml]
+  [ERROR] [2018-08-30 11:16:55][org.springframework.test.context.TestContextManager]Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@59f99ea] to prepare test instance [com.javen.BaseJunitTest@6eda5c9]
+  java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:183)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:123)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:249)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:193)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: Failed to import bean definitions from relative location [logback.xml]
+Offending resource: URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/applicationcontext.xml]; nested exception is org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 2 in XML document from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/logback.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 2; columnNumber: 16; cvc-elt.1: 找不到元素 'configuration' 的声明。
+	at org.springframework.beans.factory.parsing.FailFastProblemReporter.error(FailFastProblemReporter.java:70)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:85)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:76)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.importBeanDefinitionResource(DefaultBeanDefinitionDocumentReader.java:255)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseDefaultElement(DefaultBeanDefinitionDocumentReader.java:180)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:165)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.doRegisterBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:138)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:94)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.registerBeanDefinitions(XmlBeanDefinitionReader.java:508)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:392)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:252)
+	at org.springframework.test.context.web.GenericXmlWebContextLoader.loadBeanDefinitions(GenericXmlWebContextLoader.java:47)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:130)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 24 more
+Caused by: org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 2 in XML document from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/logback.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 2; columnNumber: 16; cvc-elt.1: 找不到元素 'configuration' 的声明。
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:399)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.importBeanDefinitionResource(DefaultBeanDefinitionDocumentReader.java:239)
+	... 43 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 2; columnNumber: 16; cvc-elt.1: 找不到元素 'configuration' 的声明。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.error(ErrorHandlerWrapper.java:134)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:396)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:284)
+	at com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.handleStartElement(XMLSchemaValidator.java:1901)
+	at com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.startElement(XMLSchemaValidator.java:741)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:374)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl$NSContentDriver.scanRootElementHook(XMLNSDocumentScannerImpl.java:613)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3132)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:852)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:76)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadDocument(XmlBeanDefinitionReader.java:429)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:391)
+	... 46 more
+[INFO] [2018-08-30 11:48:16][org.springframework.test.context.web.WebTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+  [INFO] [2018-08-30 11:48:16][org.springframework.test.context.web.WebTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@59f99ea, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@27efef64, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6f7fd0e6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@47c62251, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3e6fa38a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@66a3ffec]
+  [INFO] [2018-08-30 11:48:17][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/applicationcontext.xml]
+  [INFO] [2018-08-30 11:48:17][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-mybatis.xml]
+  [INFO] [2018-08-30 11:48:17][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-rabbit.xml]
+  [INFO] [2018-08-30 11:48:17][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-mvc.xml]
+  [INFO] [2018-08-30 11:48:18][org.springframework.web.context.support.GenericWebApplicationContext]Refreshing org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 11:48:18 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 11:48:18][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [spring-config.properties]
+  [WARN] [2018-08-30 11:48:18][org.springframework.web.context.support.GenericWebApplicationContext]Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'connectionFactory' defined in null: Could not resolve placeholder 'rabbit.connect.username' in string value "${rabbit.connect.username}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'rabbit.connect.username' in string value "${rabbit.connect.username}"
+  [ERROR] [2018-08-30 11:48:18][org.springframework.test.context.TestContextManager]Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@59f99ea] to prepare test instance [com.javen.BaseJunitTest@4f6f416f]
+  java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:183)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:123)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:249)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:193)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'connectionFactory' defined in null: Could not resolve placeholder 'rabbit.connect.username' in string value "${rabbit.connect.username}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'rabbit.connect.username' in string value "${rabbit.connect.username}"
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:211)
+	at org.springframework.beans.factory.config.PropertyPlaceholderConfigurer.processProperties(PropertyPlaceholderConfigurer.java:222)
+	at org.springframework.beans.factory.config.PropertyResourceConfigurer.postProcessBeanFactory(PropertyResourceConfigurer.java:86)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:284)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:166)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:678)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:520)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:133)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 24 more
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'rabbit.connect.username' in string value "${rabbit.connect.username}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:174)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.beans.factory.config.PropertyPlaceholderConfigurer$PlaceholderResolvingStringValueResolver.resolveStringValue(PropertyPlaceholderConfigurer.java:258)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveStringValue(BeanDefinitionVisitor.java:282)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveValue(BeanDefinitionVisitor.java:204)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitPropertyValues(BeanDefinitionVisitor.java:141)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitBeanDefinition(BeanDefinitionVisitor.java:82)
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:208)
+	... 36 more
+[INFO] [2018-08-30 11:52:30][org.springframework.test.context.web.WebTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+  [INFO] [2018-08-30 11:52:30][org.springframework.test.context.web.WebTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@59f99ea, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@27efef64, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6f7fd0e6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@47c62251, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3e6fa38a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@66a3ffec]
+  [INFO] [2018-08-30 11:52:31][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/applicationcontext.xml]
+  [INFO] [2018-08-30 11:52:31][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-mybatis.xml]
+  [INFO] [2018-08-30 11:52:31][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-rabbit.xml]
+  [INFO] [2018-08-30 11:52:32][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-mvc.xml]
+  [INFO] [2018-08-30 11:52:32][org.springframework.web.context.support.GenericWebApplicationContext]Refreshing org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 11:52:32 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 11:52:32][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [spring-config.properties]
+  [INFO] [2018-08-30 11:52:33][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg]}" onto public java.lang.String com.javen.controller.RabbitController.sendAmqbMsg(org.springframework.ui.Model,java.lang.String)
+  [INFO] [2018-08-30 11:52:33][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg2]}" onto public java.lang.String com.javen.controller.RabbitController.sendAmqbMsg2(org.springframework.ui.Model,java.lang.String)
+  [INFO] [2018-08-30 11:52:33][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg3]}" onto public java.lang.String com.javen.controller.RabbitController.sendAmqbMsg3(org.springframework.ui.Model,java.lang.String)
+  [INFO] [2018-08-30 11:52:33][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/showUser],methods=[GET]}" onto public com.javen.model.User com.javen.controller.UserController.toIndex(com.javen.model.User)
+  [INFO] [2018-08-30 11:52:33][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/delete/{userId}],methods=[DELETE]}" onto public void com.javen.controller.UserController.toIndex2(java.lang.Integer)
+  [INFO] [2018-08-30 11:52:33][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/update],methods=[PUT]}" onto public void com.javen.controller.UserController.updateUser(com.javen.model.User)
+  [INFO] [2018-08-30 11:52:33][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/saveUser],methods=[POST]}" onto public void com.javen.controller.UserController.getUserInJson(com.javen.model.User)
+  [INFO] [2018-08-30 11:52:34][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 11:52:32 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 11:52:34][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 11:52:32 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 11:52:34][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/resources] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+  [INFO] [2018-08-30 11:52:34][org.springframework.context.support.DefaultLifecycleProcessor]Starting beans in phase -2147482648
+  [INFO] [2018-08-30 11:52:34][org.springframework.context.support.DefaultLifecycleProcessor]Starting beans in phase 2147483647
+  [INFO] [2018-08-30 11:52:34][org.springframework.amqp.rabbit.connection.CachingConnectionFactory]Created new connection: SimpleConnection@75190f5c [delegate=amqp://guest@127.0.0.1:5672/, localPort= 54790]
+  [INFO] [2018-08-30 11:52:34][org.springframework.mock.web.MockServletContext]Initializing Spring FrameworkServlet ''
+  [INFO] [2018-08-30 11:52:34][org.springframework.test.web.servlet.TestDispatcherServlet]FrameworkServlet '': initialization started
+  [INFO] [2018-08-30 11:52:34][org.springframework.test.web.servlet.TestDispatcherServlet]FrameworkServlet '': initialization completed in 17 ms
+  [INFO] [2018-08-30 11:52:34][org.springframework.web.context.support.GenericWebApplicationContext]Closing org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 11:52:32 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 11:52:34][org.springframework.context.support.DefaultLifecycleProcessor]Stopping beans in phase 2147483647
+  [INFO] [2018-08-30 11:52:34][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 11:52:35][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 11:52:35][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 11:52:36][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 11:52:36][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 11:52:36][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 11:52:36][org.springframework.context.support.DefaultLifecycleProcessor]Stopping beans in phase -2147482648
+  [INFO] [2018-08-30 11:54:39][org.springframework.test.context.web.WebTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+  [INFO] [2018-08-30 11:54:39][org.springframework.test.context.web.WebTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@59f99ea, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@27efef64, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6f7fd0e6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@47c62251, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3e6fa38a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@66a3ffec]
+  [INFO] [2018-08-30 11:54:39][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/applicationcontext.xml]
+  [INFO] [2018-08-30 11:54:39][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-mybatis.xml]
+  [INFO] [2018-08-30 11:54:39][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-rabbit.xml]
+  [INFO] [2018-08-30 11:54:40][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-mvc.xml]
+  [INFO] [2018-08-30 11:54:40][org.springframework.web.context.support.GenericWebApplicationContext]Refreshing org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 11:54:40 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 11:54:40][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [spring-config.properties]
+  [INFO] [2018-08-30 11:54:41][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg2]}" onto public java.lang.String com.javen.controller.RabbitController.sendAmqbMsg2(org.springframework.ui.Model,java.lang.String)
+  [INFO] [2018-08-30 11:54:41][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg3]}" onto public java.lang.String com.javen.controller.RabbitController.sendAmqbMsg3(org.springframework.ui.Model,java.lang.String)
+  [INFO] [2018-08-30 11:54:41][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg]}" onto public java.lang.String com.javen.controller.RabbitController.sendAmqbMsg(org.springframework.ui.Model,java.lang.String)
+  [INFO] [2018-08-30 11:54:41][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/showUser],methods=[GET]}" onto public com.javen.model.User com.javen.controller.UserController.toIndex(com.javen.model.User)
+  [INFO] [2018-08-30 11:54:41][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/delete/{userId}],methods=[DELETE]}" onto public void com.javen.controller.UserController.toIndex2(java.lang.Integer)
+  [INFO] [2018-08-30 11:54:41][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/update],methods=[PUT]}" onto public void com.javen.controller.UserController.updateUser(com.javen.model.User)
+  [INFO] [2018-08-30 11:54:41][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/saveUser],methods=[POST]}" onto public void com.javen.controller.UserController.getUserInJson(com.javen.model.User)
+  [INFO] [2018-08-30 11:54:41][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 11:54:40 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 11:54:41][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 11:54:40 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 11:54:42][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/resources] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+  [INFO] [2018-08-30 11:54:42][org.springframework.context.support.DefaultLifecycleProcessor]Starting beans in phase -2147482648
+  [INFO] [2018-08-30 11:54:42][org.springframework.context.support.DefaultLifecycleProcessor]Starting beans in phase 2147483647
+  [INFO] [2018-08-30 11:54:42][org.springframework.amqp.rabbit.connection.CachingConnectionFactory]Created new connection: SimpleConnection@2614ac8e [delegate=amqp://guest@127.0.0.1:5672/, localPort= 54853]
+  [INFO] [2018-08-30 11:54:42][org.springframework.mock.web.MockServletContext]Initializing Spring FrameworkServlet ''
+  [INFO] [2018-08-30 11:54:42][org.springframework.test.web.servlet.TestDispatcherServlet]FrameworkServlet '': initialization started
+  [INFO] [2018-08-30 11:54:42][org.springframework.test.web.servlet.TestDispatcherServlet]FrameworkServlet '': initialization completed in 14 ms
+  [INFO] [2018-08-30 11:54:42][org.springframework.web.context.support.GenericWebApplicationContext]Closing org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 11:54:40 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 11:54:42][org.springframework.context.support.DefaultLifecycleProcessor]Stopping beans in phase 2147483647
+  [INFO] [2018-08-30 11:54:42][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 11:54:43][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 11:54:43][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 11:54:44][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 11:54:44][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 11:54:44][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 11:54:44][org.springframework.context.support.DefaultLifecycleProcessor]Stopping beans in phase -2147482648
+  [INFO] [2018-08-30 13:35:36][org.springframework.test.context.web.WebTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+  [INFO] [2018-08-30 13:35:36][org.springframework.test.context.web.WebTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@59f99ea, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@27efef64, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6f7fd0e6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@47c62251, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3e6fa38a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@66a3ffec]
+  [INFO] [2018-08-30 13:35:37][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/applicationcontext.xml]
+  [INFO] [2018-08-30 13:35:37][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-mybatis.xml]
+  [INFO] [2018-08-30 13:35:37][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-rabbit.xml]
+  [INFO] [2018-08-30 13:35:37][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-mvc.xml]
+  [INFO] [2018-08-30 13:35:37][org.springframework.web.context.support.GenericWebApplicationContext]Refreshing org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 13:35:37 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 13:35:38][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [spring-config.properties]
+  [INFO] [2018-08-30 13:35:39][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg]}" onto public java.lang.String com.javen.controller.RabbitController.sendRabbitMsg(java.lang.String)
+  [INFO] [2018-08-30 13:35:39][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg2]}" onto public java.lang.String com.javen.controller.RabbitController.sendAmqbMsg2(org.springframework.ui.Model,java.lang.String)
+  [INFO] [2018-08-30 13:35:39][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg3]}" onto public java.lang.String com.javen.controller.RabbitController.sendAmqbMsg3(org.springframework.ui.Model,java.lang.String)
+  [INFO] [2018-08-30 13:35:39][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/showUser],methods=[GET]}" onto public com.javen.model.User com.javen.controller.UserController.toIndex(com.javen.model.User)
+  [INFO] [2018-08-30 13:35:39][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/delete/{userId}],methods=[DELETE]}" onto public void com.javen.controller.UserController.toIndex2(java.lang.Integer)
+  [INFO] [2018-08-30 13:35:39][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/update],methods=[PUT]}" onto public void com.javen.controller.UserController.updateUser(com.javen.model.User)
+  [INFO] [2018-08-30 13:35:39][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/saveUser],methods=[POST]}" onto public void com.javen.controller.UserController.getUserInJson(com.javen.model.User)
+  [INFO] [2018-08-30 13:35:40][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 13:35:37 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 13:35:40][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 13:35:37 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 13:35:40][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/resources] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+  [INFO] [2018-08-30 13:35:40][org.springframework.context.support.DefaultLifecycleProcessor]Starting beans in phase -2147482648
+  [INFO] [2018-08-30 13:35:40][org.springframework.context.support.DefaultLifecycleProcessor]Starting beans in phase 2147483647
+  [INFO] [2018-08-30 13:35:40][org.springframework.amqp.rabbit.connection.CachingConnectionFactory]Created new connection: SimpleConnection@308eea2f [delegate=amqp://guest@127.0.0.1:5672/, localPort= 58626]
+  [INFO] [2018-08-30 13:35:40][org.springframework.mock.web.MockServletContext]Initializing Spring FrameworkServlet ''
+  [INFO] [2018-08-30 13:35:40][org.springframework.test.web.servlet.TestDispatcherServlet]FrameworkServlet '': initialization started
+  [INFO] [2018-08-30 13:35:40][org.springframework.test.web.servlet.TestDispatcherServlet]FrameworkServlet '': initialization completed in 20 ms
+  [INFO] [2018-08-30 13:35:40][org.springframework.web.context.support.GenericWebApplicationContext]Closing org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 13:35:37 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 13:35:40][org.springframework.context.support.DefaultLifecycleProcessor]Stopping beans in phase 2147483647
+  [INFO] [2018-08-30 13:35:40][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 13:35:41][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 13:35:41][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 13:35:42][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 13:35:42][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 13:35:43][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 13:35:43][org.springframework.context.support.DefaultLifecycleProcessor]Stopping beans in phase -2147482648
+  [INFO] [2018-08-30 13:58:53][org.springframework.test.context.web.WebTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+  [INFO] [2018-08-30 13:58:53][org.springframework.test.context.web.WebTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@523884b2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5b275dab, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@61832929, org.springframework.test.context.support.DirtiesContextTestExecutionListener@29774679, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3ffc5af1, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5e5792a0]
+  [INFO] [2018-08-30 13:58:54][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/applicationcontext.xml]
+  [INFO] [2018-08-30 13:58:54][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-mybatis.xml]
+  [INFO] [2018-08-30 13:58:54][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-rabbit.xml]
+  [INFO] [2018-08-30 13:58:54][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-mvc.xml]
+  [INFO] [2018-08-30 13:58:55][org.springframework.web.context.support.GenericWebApplicationContext]Refreshing org.springframework.web.context.support.GenericWebApplicationContext@646be2c3: startup date [Thu Aug 30 13:58:55 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 13:58:55][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [spring-config.properties]
+  [INFO] [2018-08-30 13:58:56][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg]}" onto public java.lang.String com.javen.controller.RabbitController.sendRabbitMsg(java.lang.String)
+  [INFO] [2018-08-30 13:58:56][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg2]}" onto public java.lang.String com.javen.controller.RabbitController.sendAmqbMsg2(org.springframework.ui.Model,java.lang.String)
+  [INFO] [2018-08-30 13:58:56][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg3]}" onto public java.lang.String com.javen.controller.RabbitController.sendAmqbMsg3(org.springframework.ui.Model,java.lang.String)
+  [INFO] [2018-08-30 13:58:56][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/showUser],methods=[GET]}" onto public com.javen.model.User com.javen.controller.UserController.toIndex(com.javen.model.User)
+  [INFO] [2018-08-30 13:58:56][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/delete/{userId}],methods=[DELETE]}" onto public void com.javen.controller.UserController.toIndex2(java.lang.Integer)
+  [INFO] [2018-08-30 13:58:56][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/update],methods=[PUT]}" onto public void com.javen.controller.UserController.updateUser(com.javen.model.User)
+  [INFO] [2018-08-30 13:58:56][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/saveUser],methods=[POST]}" onto public void com.javen.controller.UserController.getUserInJson(com.javen.model.User)
+  [INFO] [2018-08-30 13:58:57][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@646be2c3: startup date [Thu Aug 30 13:58:55 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 13:58:57][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@646be2c3: startup date [Thu Aug 30 13:58:55 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 13:58:57][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/resources] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+  [INFO] [2018-08-30 13:58:57][org.springframework.context.support.DefaultLifecycleProcessor]Starting beans in phase -2147482648
+  [INFO] [2018-08-30 13:58:57][org.springframework.context.support.DefaultLifecycleProcessor]Starting beans in phase 2147483647
+  [INFO] [2018-08-30 13:58:57][org.springframework.amqp.rabbit.connection.CachingConnectionFactory]Created new connection: SimpleConnection@2737641b [delegate=amqp://guest@127.0.0.1:5672/, localPort= 59331]
+  [INFO] [2018-08-30 13:58:57][org.springframework.amqp.rabbit.core.RabbitAdmin]Auto-declaring a non-durable or auto-delete Exchange (mq.topicExchange) durable:true, auto-delete:true. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+  [INFO] [2018-08-30 13:58:57][org.springframework.amqp.rabbit.core.RabbitAdmin]Auto-declaring a non-durable or auto-delete Exchange (mq.directExchange) durable:true, auto-delete:true. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+  [INFO] [2018-08-30 13:58:57][org.springframework.amqp.rabbit.core.RabbitAdmin]Auto-declaring a non-durable, auto-delete, or exclusive Queue (mq.topicqueue1) durable:true, auto-delete:true, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+  [INFO] [2018-08-30 13:58:57][org.springframework.amqp.rabbit.core.RabbitAdmin]Auto-declaring a non-durable, auto-delete, or exclusive Queue (mq.topicqueue2) durable:true, auto-delete:true, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+  [INFO] [2018-08-30 13:58:57][org.springframework.amqp.rabbit.core.RabbitAdmin]Auto-declaring a non-durable, auto-delete, or exclusive Queue (mq.directqueue) durable:true, auto-delete:true, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+  [ERROR] [2018-08-30 13:58:57][org.springframework.amqp.rabbit.connection.CachingConnectionFactory]Channel shutdown: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'auto_delete' for exchange 'mq.topicExchange' in vhost '/': received 'true' but current is 'false', class-id=40, method-id=10)
+  [ERROR] [2018-08-30 13:58:57][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Failed to check/redeclare auto-delete queue(s).
+  org.springframework.amqp.AmqpIOException: java.io.IOException
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:71)
+	at org.springframework.amqp.rabbit.connection.RabbitAccessor.convertRabbitAccessException(RabbitAccessor.java:113)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:1442)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:1392)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:1368)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.initialize(RabbitAdmin.java:503)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin$11.onCreate(RabbitAdmin.java:419)
+	at org.springframework.amqp.rabbit.connection.CompositeConnectionListener.onCreate(CompositeConnectionListener.java:33)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:553)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:1411)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:1392)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:1368)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:336)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.redeclareElementsIfNecessary(SimpleMessageListenerContainer.java:1123)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$800(SimpleMessageListenerContainer.java:98)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1329)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:105)
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:101)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:123)
+	at com.rabbitmq.client.impl.ChannelN.exchangeDeclare(ChannelN.java:702)
+	at com.rabbitmq.client.impl.ChannelN.exchangeDeclare(ChannelN.java:60)
+	at org.springframework.amqp.rabbit.support.PublisherCallbackChannelImpl.exchangeDeclare(PublisherCallbackChannelImpl.java:293)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$CachedChannelInvocationHandler.invoke(CachingConnectionFactory.java:917)
+	at com.sun.proxy.$Proxy44.exchangeDeclare(Unknown Source)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.declareExchanges(RabbitAdmin.java:557)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.access$000(RabbitAdmin.java:66)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin$12.doInRabbit(RabbitAdmin.java:506)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:1436)
+	... 14 more
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'auto_delete' for exchange 'mq.topicExchange' in vhost '/': received 'true' but current is 'false', class-id=40, method-id=10)
+	at com.rabbitmq.utility.ValueOrException.getValue(ValueOrException.java:66)
+	at com.rabbitmq.utility.BlockingValueOrException.uninterruptibleGetValue(BlockingValueOrException.java:32)
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.getReply(AMQChannel.java:360)
+	at com.rabbitmq.client.impl.AMQChannel.privateRpc(AMQChannel.java:225)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:117)
+	... 27 more
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=406, reply-text=PRECONDITION_FAILED - inequivalent arg 'auto_delete' for exchange 'mq.topicExchange' in vhost '/': received 'true' but current is 'false', class-id=40, method-id=10)
+	at com.rabbitmq.client.impl.ChannelN.asyncShutdown(ChannelN.java:483)
+	at com.rabbitmq.client.impl.ChannelN.processAsync(ChannelN.java:320)
+	at com.rabbitmq.client.impl.AMQChannel.handleCompleteInboundCommand(AMQChannel.java:143)
+	at com.rabbitmq.client.impl.AMQChannel.handleFrame(AMQChannel.java:90)
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:559)
+	... 1 more
+[INFO] [2018-08-30 13:58:57][org.springframework.mock.web.MockServletContext]Initializing Spring FrameworkServlet ''
+  [INFO] [2018-08-30 13:58:57][org.springframework.test.web.servlet.TestDispatcherServlet]FrameworkServlet '': initialization started
+  [INFO] [2018-08-30 13:58:57][org.springframework.test.web.servlet.TestDispatcherServlet]FrameworkServlet '': initialization completed in 11 ms
+  [INFO] [2018-08-30 13:58:57][org.springframework.web.context.support.GenericWebApplicationContext]Closing org.springframework.web.context.support.GenericWebApplicationContext@646be2c3: startup date [Thu Aug 30 13:58:55 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 13:58:57][org.springframework.context.support.DefaultLifecycleProcessor]Stopping beans in phase 2147483647
+  [INFO] [2018-08-30 13:58:57][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 13:58:58][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 13:58:58][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 13:58:58][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 13:58:58][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 13:58:58][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 13:58:58][org.springframework.context.support.DefaultLifecycleProcessor]Stopping beans in phase -2147482648
+  [INFO] [2018-08-30 14:10:23][org.springframework.test.context.web.WebTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+  [INFO] [2018-08-30 14:10:23][org.springframework.test.context.web.WebTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@59f99ea, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@27efef64, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6f7fd0e6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@47c62251, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3e6fa38a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@66a3ffec]
+  [INFO] [2018-08-30 14:10:24][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/applicationcontext.xml]
+  [INFO] [2018-08-30 14:10:24][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-mybatis.xml]
+  [INFO] [2018-08-30 14:10:24][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-rabbit.xml]
+  [INFO] [2018-08-30 14:10:24][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-mvc.xml]
+  [INFO] [2018-08-30 14:10:25][org.springframework.web.context.support.GenericWebApplicationContext]Refreshing org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 14:10:25 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 14:10:25][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [spring-config.properties]
+  [INFO] [2018-08-30 14:10:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg]}" onto public java.lang.String com.javen.controller.RabbitController.sendRabbitMsg(java.lang.String)
+  [INFO] [2018-08-30 14:10:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg2]}" onto public java.lang.String com.javen.controller.RabbitController.sendAmqbMsg2(org.springframework.ui.Model,java.lang.String)
+  [INFO] [2018-08-30 14:10:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg3]}" onto public java.lang.String com.javen.controller.RabbitController.sendAmqbMsg3(org.springframework.ui.Model,java.lang.String)
+  [INFO] [2018-08-30 14:10:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/delete/{userId}],methods=[DELETE]}" onto public void com.javen.controller.UserController.toIndex2(java.lang.Integer)
+  [INFO] [2018-08-30 14:10:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/showUser],methods=[GET]}" onto public com.javen.model.User com.javen.controller.UserController.toIndex(com.javen.model.User)
+  [INFO] [2018-08-30 14:10:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/update],methods=[PUT]}" onto public void com.javen.controller.UserController.updateUser(com.javen.model.User)
+  [INFO] [2018-08-30 14:10:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/saveUser],methods=[POST]}" onto public void com.javen.controller.UserController.getUserInJson(com.javen.model.User)
+  [INFO] [2018-08-30 14:10:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 14:10:25 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 14:10:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 14:10:25 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 14:10:27][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/resources] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+  [INFO] [2018-08-30 14:10:27][org.springframework.context.support.DefaultLifecycleProcessor]Starting beans in phase -2147482648
+  [INFO] [2018-08-30 14:10:27][org.springframework.context.support.DefaultLifecycleProcessor]Starting beans in phase 2147483647
+  [ERROR] [2018-08-30 14:10:27][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Failed to check/redeclare auto-delete queue(s).
+  org.springframework.amqp.AmqpIOException: java.io.IOException
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:71)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:306)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:547)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:1411)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:1392)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:1368)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:336)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.redeclareElementsIfNecessary(SimpleMessageListenerContainer.java:1123)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$800(SimpleMessageListenerContainer.java:98)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1329)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:105)
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:101)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:123)
+	at com.rabbitmq.client.impl.AMQConnection.start(AMQConnection.java:377)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:824)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:778)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:898)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:297)
+	... 9 more
+Caused by: com.rabbitmq.client.ShutdownSignalException: connection error; protocol method: #method<connection.close>(reply-code=530, reply-text=NOT_ALLOWED - access to vhost '/' refused for user 'zhanghang', class-id=10, method-id=40)
+	at com.rabbitmq.utility.ValueOrException.getValue(ValueOrException.java:66)
+	at com.rabbitmq.utility.BlockingValueOrException.uninterruptibleGetValue(BlockingValueOrException.java:32)
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.getReply(AMQChannel.java:360)
+	at com.rabbitmq.client.impl.AMQChannel.privateRpc(AMQChannel.java:225)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:117)
+	... 14 more
+[ERROR] [2018-08-30 14:10:27][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Failed to check/redeclare auto-delete queue(s).
+  org.springframework.amqp.AmqpIOException: java.io.IOException
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:71)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:306)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:547)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:1411)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:1392)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:1368)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:336)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.redeclareElementsIfNecessary(SimpleMessageListenerContainer.java:1123)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$800(SimpleMessageListenerContainer.java:98)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1329)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:105)
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:101)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:123)
+	at com.rabbitmq.client.impl.AMQConnection.start(AMQConnection.java:377)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:824)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:778)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:898)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:297)
+	... 9 more
+Caused by: com.rabbitmq.client.ShutdownSignalException: connection error; protocol method: #method<connection.close>(reply-code=530, reply-text=NOT_ALLOWED - access to vhost '/' refused for user 'zhanghang', class-id=10, method-id=40)
+	at com.rabbitmq.utility.ValueOrException.getValue(ValueOrException.java:66)
+	at com.rabbitmq.utility.BlockingValueOrException.uninterruptibleGetValue(BlockingValueOrException.java:32)
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.getReply(AMQChannel.java:360)
+	at com.rabbitmq.client.impl.AMQChannel.privateRpc(AMQChannel.java:225)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:117)
+	... 14 more
+[ERROR] [2018-08-30 14:10:27][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Failed to check/redeclare auto-delete queue(s).
+  org.springframework.amqp.AmqpIOException: java.io.IOException
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:71)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:306)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:547)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:1411)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:1392)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:1368)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:336)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.redeclareElementsIfNecessary(SimpleMessageListenerContainer.java:1123)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$800(SimpleMessageListenerContainer.java:98)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1329)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:105)
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:101)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:123)
+	at com.rabbitmq.client.impl.AMQConnection.start(AMQConnection.java:377)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:824)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:778)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:898)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:297)
+	... 9 more
+Caused by: com.rabbitmq.client.ShutdownSignalException: connection error; protocol method: #method<connection.close>(reply-code=530, reply-text=NOT_ALLOWED - access to vhost '/' refused for user 'zhanghang', class-id=10, method-id=40)
+	at com.rabbitmq.utility.ValueOrException.getValue(ValueOrException.java:66)
+	at com.rabbitmq.utility.BlockingValueOrException.uninterruptibleGetValue(BlockingValueOrException.java:32)
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.getReply(AMQChannel.java:360)
+	at com.rabbitmq.client.impl.AMQChannel.privateRpc(AMQChannel.java:225)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:117)
+	... 14 more
+[INFO] [2018-08-30 14:10:27][org.springframework.mock.web.MockServletContext]Initializing Spring FrameworkServlet ''
+  [INFO] [2018-08-30 14:10:27][org.springframework.test.web.servlet.TestDispatcherServlet]FrameworkServlet '': initialization started
+  [INFO] [2018-08-30 14:10:27][org.springframework.test.web.servlet.TestDispatcherServlet]FrameworkServlet '': initialization completed in 14 ms
+  [INFO] [2018-08-30 14:10:27][org.springframework.web.context.support.GenericWebApplicationContext]Closing org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 14:10:25 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 14:10:27][org.springframework.context.support.DefaultLifecycleProcessor]Stopping beans in phase 2147483647
+  [INFO] [2018-08-30 14:10:27][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 14:10:27][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 14:10:27][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 14:10:27][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 14:10:27][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 14:10:27][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 14:10:27][org.springframework.context.support.DefaultLifecycleProcessor]Stopping beans in phase -2147482648
+  [INFO] [2018-08-30 14:14:24][org.springframework.test.context.web.WebTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+  [INFO] [2018-08-30 14:14:24][org.springframework.test.context.web.WebTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@59f99ea, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@27efef64, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6f7fd0e6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@47c62251, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3e6fa38a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@66a3ffec]
+  [INFO] [2018-08-30 14:14:25][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/applicationcontext.xml]
+  [INFO] [2018-08-30 14:14:25][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-mybatis.xml]
+  [INFO] [2018-08-30 14:14:25][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-rabbit.xml]
+  [INFO] [2018-08-30 14:14:25][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-mvc.xml]
+  [INFO] [2018-08-30 14:14:25][org.springframework.web.context.support.GenericWebApplicationContext]Refreshing org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 14:14:25 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 14:14:26][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [spring-config.properties]
+  [INFO] [2018-08-30 14:14:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg]}" onto public java.lang.String com.javen.controller.RabbitController.sendRabbitMsg(java.lang.String)
+  [INFO] [2018-08-30 14:14:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg2]}" onto public java.lang.String com.javen.controller.RabbitController.sendAmqbMsg2(org.springframework.ui.Model,java.lang.String)
+  [INFO] [2018-08-30 14:14:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg3]}" onto public java.lang.String com.javen.controller.RabbitController.sendAmqbMsg3(org.springframework.ui.Model,java.lang.String)
+  [INFO] [2018-08-30 14:14:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/showUser],methods=[GET]}" onto public com.javen.model.User com.javen.controller.UserController.toIndex(com.javen.model.User)
+  [INFO] [2018-08-30 14:14:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/delete/{userId}],methods=[DELETE]}" onto public void com.javen.controller.UserController.toIndex2(java.lang.Integer)
+  [INFO] [2018-08-30 14:14:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/update],methods=[PUT]}" onto public void com.javen.controller.UserController.updateUser(com.javen.model.User)
+  [INFO] [2018-08-30 14:14:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/saveUser],methods=[POST]}" onto public void com.javen.controller.UserController.getUserInJson(com.javen.model.User)
+  [INFO] [2018-08-30 14:14:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 14:14:25 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 14:14:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 14:14:25 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 14:14:27][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/resources] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+  [INFO] [2018-08-30 14:14:27][org.springframework.context.support.DefaultLifecycleProcessor]Starting beans in phase -2147482648
+  [INFO] [2018-08-30 14:14:27][org.springframework.context.support.DefaultLifecycleProcessor]Starting beans in phase 2147483647
+  [INFO] [2018-08-30 14:14:27][org.springframework.amqp.rabbit.connection.CachingConnectionFactory]Created new connection: SimpleConnection@24036d6 [delegate=amqp://zhanghang@127.0.0.1:5672/, localPort= 60173]
+  [INFO] [2018-08-30 14:14:27][org.springframework.amqp.rabbit.core.RabbitAdmin]Auto-declaring a non-durable or auto-delete Exchange (rabbit.topicExchange) durable:true, auto-delete:true. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+  [INFO] [2018-08-30 14:14:27][org.springframework.amqp.rabbit.core.RabbitAdmin]Auto-declaring a non-durable or auto-delete Exchange (rabbit.directExchange) durable:true, auto-delete:true. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+  [INFO] [2018-08-30 14:14:27][org.springframework.amqp.rabbit.core.RabbitAdmin]Auto-declaring a non-durable, auto-delete, or exclusive Queue (rabbit.topicqueue1) durable:true, auto-delete:true, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+  [INFO] [2018-08-30 14:14:27][org.springframework.amqp.rabbit.core.RabbitAdmin]Auto-declaring a non-durable, auto-delete, or exclusive Queue (rabbit.topicqueue2) durable:true, auto-delete:true, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+  [INFO] [2018-08-30 14:14:27][org.springframework.amqp.rabbit.core.RabbitAdmin]Auto-declaring a non-durable, auto-delete, or exclusive Queue (rabbit.directqueue) durable:true, auto-delete:true, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+  [INFO] [2018-08-30 14:14:28][org.springframework.mock.web.MockServletContext]Initializing Spring FrameworkServlet ''
+  [INFO] [2018-08-30 14:14:28][org.springframework.test.web.servlet.TestDispatcherServlet]FrameworkServlet '': initialization started
+  [INFO] [2018-08-30 14:14:28][org.springframework.test.web.servlet.TestDispatcherServlet]FrameworkServlet '': initialization completed in 14 ms
+  [INFO] [2018-08-30 14:14:28][org.springframework.web.context.support.GenericWebApplicationContext]Closing org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 14:14:25 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 14:14:28][org.springframework.context.support.DefaultLifecycleProcessor]Stopping beans in phase 2147483647
+  [INFO] [2018-08-30 14:14:28][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 14:14:29][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 14:14:29][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 14:14:29][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 14:14:29][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 14:14:29][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 14:14:29][org.springframework.context.support.DefaultLifecycleProcessor]Stopping beans in phase -2147482648
+  [INFO] [2018-08-30 14:15:15][org.springframework.test.context.web.WebTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+  [INFO] [2018-08-30 14:15:15][org.springframework.test.context.web.WebTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@59f99ea, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@27efef64, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6f7fd0e6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@47c62251, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3e6fa38a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@66a3ffec]
+  [INFO] [2018-08-30 14:15:15][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/applicationcontext.xml]
+  [INFO] [2018-08-30 14:15:15][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-mybatis.xml]
+  [INFO] [2018-08-30 14:15:15][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-rabbit.xml]
+  [INFO] [2018-08-30 14:15:16][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from URL [file:/Users/zhanghang/IdeaProjects/Generic/Ssm/target/classes/spring-mvc.xml]
+  [INFO] [2018-08-30 14:15:16][org.springframework.web.context.support.GenericWebApplicationContext]Refreshing org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 14:15:16 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 14:15:16][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [spring-config.properties]
+  [INFO] [2018-08-30 14:15:17][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg]}" onto public java.lang.String com.javen.controller.RabbitController.sendRabbitMsg(java.lang.String)
+  [INFO] [2018-08-30 14:15:17][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg2]}" onto public java.lang.String com.javen.controller.RabbitController.sendAmqbMsg2(org.springframework.ui.Model,java.lang.String)
+  [INFO] [2018-08-30 14:15:17][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rabbit/sendMsg3]}" onto public java.lang.String com.javen.controller.RabbitController.sendAmqbMsg3(org.springframework.ui.Model,java.lang.String)
+  [INFO] [2018-08-30 14:15:17][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/showUser],methods=[GET]}" onto public com.javen.model.User com.javen.controller.UserController.toIndex(com.javen.model.User)
+  [INFO] [2018-08-30 14:15:17][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/delete/{userId}],methods=[DELETE]}" onto public void com.javen.controller.UserController.toIndex2(java.lang.Integer)
+  [INFO] [2018-08-30 14:15:17][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/update],methods=[PUT]}" onto public void com.javen.controller.UserController.updateUser(com.javen.model.User)
+  [INFO] [2018-08-30 14:15:17][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/saveUser],methods=[POST]}" onto public void com.javen.controller.UserController.getUserInJson(com.javen.model.User)
+  [INFO] [2018-08-30 14:15:18][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 14:15:16 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 14:15:18][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 14:15:16 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 14:15:18][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/resources] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+  [INFO] [2018-08-30 14:15:18][org.springframework.context.support.DefaultLifecycleProcessor]Starting beans in phase -2147482648
+  [INFO] [2018-08-30 14:15:18][org.springframework.context.support.DefaultLifecycleProcessor]Starting beans in phase 2147483647
+  [INFO] [2018-08-30 14:15:18][org.springframework.amqp.rabbit.connection.CachingConnectionFactory]Created new connection: SimpleConnection@35c276ed [delegate=amqp://zhanghang@127.0.0.1:5672/, localPort= 60198]
+  [INFO] [2018-08-30 14:15:18][org.springframework.amqp.rabbit.core.RabbitAdmin]Auto-declaring a non-durable or auto-delete Exchange (rabbit.topicExchange) durable:true, auto-delete:true. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+  [INFO] [2018-08-30 14:15:18][org.springframework.amqp.rabbit.core.RabbitAdmin]Auto-declaring a non-durable or auto-delete Exchange (rabbit.directExchange) durable:true, auto-delete:true. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+  [INFO] [2018-08-30 14:15:18][org.springframework.amqp.rabbit.core.RabbitAdmin]Auto-declaring a non-durable, auto-delete, or exclusive Queue (rabbit.topicqueue1) durable:true, auto-delete:true, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+  [INFO] [2018-08-30 14:15:18][org.springframework.amqp.rabbit.core.RabbitAdmin]Auto-declaring a non-durable, auto-delete, or exclusive Queue (rabbit.topicqueue2) durable:true, auto-delete:true, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+  [INFO] [2018-08-30 14:15:18][org.springframework.amqp.rabbit.core.RabbitAdmin]Auto-declaring a non-durable, auto-delete, or exclusive Queue (rabbit.directqueue) durable:true, auto-delete:true, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+  [INFO] [2018-08-30 14:15:18][org.springframework.mock.web.MockServletContext]Initializing Spring FrameworkServlet ''
+  [INFO] [2018-08-30 14:15:18][org.springframework.test.web.servlet.TestDispatcherServlet]FrameworkServlet '': initialization started
+  [INFO] [2018-08-30 14:15:18][org.springframework.test.web.servlet.TestDispatcherServlet]FrameworkServlet '': initialization completed in 11 ms
+  [INFO] [2018-08-30 14:15:18][org.springframework.web.context.support.GenericWebApplicationContext]Closing org.springframework.web.context.support.GenericWebApplicationContext@58fdd99: startup date [Thu Aug 30 14:15:16 CST 2018]; root of context hierarchy
+  [INFO] [2018-08-30 14:15:18][org.springframework.context.support.DefaultLifecycleProcessor]Stopping beans in phase 2147483647
+  [INFO] [2018-08-30 14:15:18][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 14:15:19][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 14:15:19][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 14:15:19][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 14:15:19][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Waiting for workers to finish.
+  [INFO] [2018-08-30 14:15:19][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer]Successfully waited for workers to finish.
+  [INFO] [2018-08-30 14:15:19][org.springframework.context.support.DefaultLifecycleProcessor]Stopping beans in phase -2147482648
+  
