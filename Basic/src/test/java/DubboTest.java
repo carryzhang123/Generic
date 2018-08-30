@@ -1,5 +1,5 @@
 import com.hang.dubbo.DemoService;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
