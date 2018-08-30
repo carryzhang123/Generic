@@ -14,8 +14,8 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class TestRun {
     public static void main(String[] args) throws Exception {
         GenerateData generateData = new GenerateData();
-        generateData.setBeginDate("2018-05-01");
-        generateData.setEndDate("2018-05-03");
+        generateData.setBeginDate("2018-07-01");
+        generateData.setEndDate("2018-07-03");
         generateData.setLog("recycle.log");
         generateData.setServerId("50003-50004");
         //是否合并

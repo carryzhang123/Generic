@@ -21,7 +21,7 @@ import java.util.Map;
 public class SpringContext implements ApplicationContextAware {
     public static SpringContext instance;
 
-    @PostConstruct
+//    @PostConstruct
     public void init() throws Exception {
         instance =this;
         //加载Resource数据，转换过成对象

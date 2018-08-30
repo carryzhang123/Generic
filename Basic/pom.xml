@@ -179,5 +179,16 @@
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
+
+        <!-- dubbo当前最新版 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+        </dependency>
+        <!-- zookeeper客户端 -->
+        <dependency>
+            <groupId>com.101tec</groupId>
+            <artifactId>zkclient</artifactId>
+        </dependency>
     </dependencies>
 </project>
