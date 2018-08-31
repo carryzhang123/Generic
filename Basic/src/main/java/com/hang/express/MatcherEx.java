@@ -5,7 +5,7 @@ package com.hang.express;
  * @create 2018-04-27 15:10
  **/
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.regex.Pattern;
 

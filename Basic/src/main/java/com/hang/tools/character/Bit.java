@@ -1,6 +1,6 @@
 package com.hang.tools.character;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 /**
  * @author ZhangHang

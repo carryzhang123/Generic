@@ -1,6 +1,6 @@
 package com.hang.express;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

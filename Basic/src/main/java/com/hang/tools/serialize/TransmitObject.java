@@ -1,7 +1,7 @@
 package com.hang.tools.serialize;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.io.*;
 
